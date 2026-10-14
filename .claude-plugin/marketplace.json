@@ -1,0 +1,15 @@
+{
+  "name": "liftory",
+  "owner": {
+    "name": "Liftory",
+    "email": "info@liftory.ch",
+    "url": "https://liftory.ch"
+  },
+  "description": "The Liftory plugin: training plans, nutrition plans, coaching and messages in your Liftory account.",
+  "plugins": [
+    {
+      "name": "liftory",
+      "source": "./"
+    }
+  ]
+}

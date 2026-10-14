@@ -1,0 +1,25 @@
+{
+  "name": "liftory",
+  "displayName": "Liftory",
+  "version": "1.0.2",
+  "description": "Work with your Liftory account from Claude: create and review training plans and nutrition plans for yourself and, if you coach, for your clients; check workout history; and read and answer your Liftory messages. You sign in with your own Liftory account, every change is made with your own Liftory permissions, and the skills show you each change and ask before saving, activating or sending it.",
+  "author": {
+    "name": "Liftory",
+    "email": "info@liftory.ch",
+    "url": "https://liftory.ch"
+  },
+  "homepage": "https://liftory.ch",
+  "repository": "https://github.com/liftory/liftory-claude-plugin",
+  "license": "LicenseRef-Liftory",
+  "keywords": [
+    "fitness",
+    "training plans",
+    "coaching",
+    "nutrition",
+    "workouts"
+  ],
+  "icon": "./icon.png",
+  "supportUrl": "https://liftory.ch",
+  "privacyPolicyUrl": "https://liftory.ch/privacy",
+  "termsOfServiceUrl": "https://liftory.ch/terms"
+}
