@@ -6,7 +6,11 @@ description: Put together a new nutrition plan (a menu of meals, options, and fo
 
 The user's explicit instructions take priority over this skill. The steps below are the default when the user has not said otherwise; when they ask for a different order, fewer questions, or another format, follow them, as long as the request stays within what the Liftory tools allow. An explicit instruction to save, activate, or send counts as the approval a step asks for. Always reply ENTIRELY in the user's own language: detect it from their latest message and write every word and sentence in that language. Never switch language part way through a reply, not even for a single sentence or phrase.
 
-Liftory gives general guidance, not medical or dietary advice. When the user names a medical condition, an eating disorder, pregnancy, or a medication that affects diet, say that a qualified professional should set the plan, and continue only with targets that professional or the user gives.
+Liftory gives general fitness guidance, not medical or dietary advice. Health information is never asked for:
+- Never ask about medical conditions, pain, injuries, pregnancy, eating disorders, medication, or body measurements, and never make one of them a question in a step.
+- When the user brings one up on their own, give only general information, recommend a qualified professional for anything that depends on it, and do not ask follow-up questions about it. When a plan or a menu is being built, say that any exercises or foods they name will be left out.
+- Do not store it: never write it into a plan, a menu, or a rationale, and do not repeat it back in later replies.
+- Leave out every exercise or food the user asks to leave out. The reason is not needed and is not recorded.
 
 ## Whose menu
 
@@ -19,7 +23,7 @@ Every tool acts as the signed-in Liftory user. Decide whose data the request is 
 ## Steps
 
 1. Decide whose menu it is, as above. Call get_last_nutrition_plan for that person when the user refers to their current menu, so the new one can build on it.
-2. Collect what the menu needs and ask for what is missing, in one message: the daily targets (or that there are none), the number of meals and their times, foods to include or avoid (allergies, intolerances, dietary pattern), and whether some days differ. Do not set calorie or macro targets yourself; use the ones the user gives.
+2. Collect what the menu needs and ask for what is missing, in one message: the daily targets (or that there are none), the number of meals and their times, the foods they want included or left out, and whether some days differ. Do not set calorie or macro targets yourself; use the ones the user gives.
 3. Find every food with search_food, in the user's language and with their language code as the locale. Use only foods it returns, with their foodId. When nothing suitable comes back, say so, and keep the line without a foodId only if the user agrees.
 4. Build the draft as [references/menu-model.md](references/menu-model.md) describes and call validate_nutrition_plan. Fix every unknown foodId and every problem it reports, and validate again until both are empty.
 5. Show the menu: each meal with its options and foods with amounts, the targets, the weekly limits and notes, and the warnings validation returned. Ask the user to approve it, and ask whether it should replace the menu being followed now (which archives the person's other menus) or be saved without activating it.

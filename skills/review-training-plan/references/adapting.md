@@ -4,12 +4,12 @@ Read this when the user asks to change a plan they already have.
 
 ## What stays
 
-- Change only what the user asked for, or what the workout history or a new restriction makes necessary. Every other day, exercise, set, rep, rest, and technique stays exactly as the plan stores it.
+- Change only what the user asked for, or what the workout history or an exercise the user now wants left out makes necessary. Every other day, exercise, set, rep, rest, and technique stays exactly as the plan stores it.
 - Keep the user's original exercise wording (userTerm), the week structure, and the order of the days.
 
 ## Replacing an exercise
 
-- Find the replacement with search_exercise or browse_muscle_pool. Prefer one from the same muscle group, within the trainee's level, that respects every restriction, and that is not already on that day.
+- Find the replacement with search_exercise or browse_muscle_pool. Prefer one from the same muscle group, within the trainee's level, that is not one the user asked to leave out, and that is not already on that day.
 - Never leave a day empty. When no allowed replacement exists, keep the day with fewer exercises only if the user agrees; otherwise keep the original exercise and say why.
 - A request to make the plan easier or harder moves the difficulty of the affected exercises down or up and keeps the rest.
 

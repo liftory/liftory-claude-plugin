@@ -8,11 +8,11 @@ Read this when choosing the exercises and building the days of a new plan.
 - Search with a difficulty range on search_exercise or browse_muscle_pool: beginner 1 to 4, intermediate 3 to 8, advanced 5 to 10. Shift the range down for someone returning after a long break, deconditioned, or older, unless the user says otherwise.
 - When the range leaves too few exercises for a muscle group, use fewer exercises rather than ones outside the range, and tell the user.
 
-## Restrictions are hard limits
+## Exclusions are hard limits
 
-- Leave out every exercise the user asked to avoid, and every exercise that heavily loads an area affected by an injury or condition they named. When unsure whether an exercise loads that area, leave it out.
+- Leave out every exercise the user asked to leave out, and every variant of a movement they ruled out as a whole. When unsure whether an exercise is one they meant, leave it out.
 - Leave out exercises that need equipment the trainee does not have. Use list_libraries and its library filter when the user trains in a setting a library describes.
-- A restriction that empties a day is shown to the user with a proposal (another focus for that day, or fewer days), never silently ignored.
+- An exclusion that empties a day is shown to the user with a proposal (another focus for that day, or fewer days), never silently ignored.
 
 ## Building the days
 
@@ -29,4 +29,4 @@ Read this when choosing the exercises and building the days of a new plan.
 
 ## The rationale
 
-create_plan stores a rationale with the plan so it can be explained later. Fill it from the conversation only: source "create", the goal in the user's words, the experience level, whether the plan is for the user ("self") or a client ("client"), days per week, missing equipment, health conditions, exercises avoided, one split line per day, short methodology notes, and the user's language code. Leave a field empty when the user did not give it.
+create_plan stores a rationale with the plan so it can be explained later. Fill it from the conversation only: source "create", the goal in the user's words, the experience level, whether the plan is for the user ("self") or a client ("client"), days per week, missing equipment, the exercises the user asked to leave out, one split line per day, short methodology notes, and the user's language code. Leave a field empty when the user did not give it, and leave empty every field not listed here.
