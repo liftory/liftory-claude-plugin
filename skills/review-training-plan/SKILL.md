@@ -10,7 +10,7 @@ The user's explicit instructions take priority over this skill. The steps below 
 
 Every tool acts as the signed-in Liftory user. Decide whose data the request is about before reading or writing anything:
 - The user's own data: call the tools without clientId.
-- A client the user coaches: call list_clients, find the client by the name the user gave, and pass that client's clientId. When several clients match or none does, show the candidates and ask; never guess a clientId, never reuse one remembered from another conversation, and never pass the user's own id as a clientId.
+- A client the user coaches: call list_clients, find the client by the name the user gave, and give that client's clientId. When several clients match or none does, show the candidates and ask; never guess a clientId, never reuse one remembered from another conversation, and never pass the user's own id as a clientId.
 - Unclear whether it is for the user or a client: call whoami, which says whether the user coaches clients, and ask only when they do.
 - list_clients is empty: the user coaches no one, so only their own data is reachable. Say so instead of looking for the person another way.
 
@@ -28,9 +28,9 @@ Answer concisely in the user's language. Do not state exercises or reasons the r
 
 1. Decide whose plan it is, as above.
 2. Read the plan and answer as described in "Reading a plan", passing clientId for a client's plan.
-3. When the question is about progress or adherence, call get_workout_history with the same clientId (the default period is the last 30 days; pass fromUtc and toUtc when the user names another period). Report what the logged workouts show and nothing more.
+3. When the question is about progress or adherence, call get_workout_history with the same clientId (the default period is the last 30 days; set fromUtc and toUtc when the user names another period). Report what the logged workouts show and nothing more.
 4. When the user wants changes, follow [references/adapting.md](references/adapting.md): propose the changes, show the resulting days, and ask for approval.
-5. After approval, call create_plan with the adapted plan as a new plan. Ask whether it should become the plan being followed now, and pass activate accordingly.
+5. After approval, call create_plan with the adapted plan as a new plan. Ask whether it should become the plan being followed now, and set activate accordingly.
 6. Confirm the new plan's name and whether it is active. The previous plan stays as it is.
 
 ## Rules

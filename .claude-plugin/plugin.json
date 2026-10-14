@@ -1,7 +1,7 @@
 {
   "name": "liftory",
   "displayName": "Liftory",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Work with your Liftory account from Claude: create and review training plans and nutrition plans for yourself and, if you coach, for your clients; check workout history; and read and answer your Liftory messages. You sign in with your own Liftory account, every change is made with your own Liftory permissions, and the skills show you each change and ask before saving, activating or sending it.",
   "author": {
     "name": "Liftory",

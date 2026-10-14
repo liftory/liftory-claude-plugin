@@ -11,7 +11,7 @@ Conversations take no clientId: list_conversations returns the signed-in user's 
 ## Steps
 
 1. Call list_conversations, with unreadOnly true when the user asks only about unread messages. When there are none, say so plainly and stop.
-2. For each conversation the user wants to read, call read_messages with its sessionId. It marks the conversation as read; pass markRead false when the user only wants a summary and asks to keep the messages unread.
+2. For each conversation the user wants to read, call read_messages with its sessionId. It marks the conversation as read; set markRead to false when the user only wants a summary and asks to keep the messages unread.
 3. Summarize per conversation: who it is with, how many messages are unread, and what the latest messages say. Quote the other person only from the returned messages.
 4. To reply, find the conversation by the person's name among the listed conversations. When several match or none does, ask. Draft the reply in the language of the conversation, show the exact text and the recipient, and ask the user to approve or edit it.
 5. Call send_message only after the user approves that exact text, with the text exactly as approved. One approval sends one message.

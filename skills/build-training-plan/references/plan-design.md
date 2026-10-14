@@ -20,7 +20,7 @@ Read this when choosing the exercises and building the days of a new plan.
 - For a strength or muscle goal with an intermediate or advanced trainee, build each day on multi-joint movements first and add isolation work after. A beginner keeps the more accessible movements.
 - Do not repeat the same exercise on two days of the same week unless the user asks for it.
 - Prescribe sets, reps or a duration, and rest that fit the goal and the level, grounded in what search_knowledge returned. A timed exercise gets a duration in seconds and no reps.
-- Use a technique only when the design calls for it: call list_techniques and pass the techniqueId of the technique whose description matches. Never write a technique as free text.
+- Use a technique only when the design calls for it: call list_techniques and give the techniqueId of the technique whose description matches. Never write a technique as free text.
 
 ## More than one week
 
