@@ -70,6 +70,7 @@ data is in the [privacy policy](https://liftory.ch/privacy).
 | `digitize-nutrition-plan` | Transcribes a coach's menu from a document or picture |
 | `answer-training-questions` | Answers a fitness question from Liftory's knowledge base and exercise catalog |
 | `message-inbox` | Summarizes your conversations, drafts a reply, and sends it after you approve it |
+| `use-the-app` | Tells you where to find something in the Liftory app and how to use it, with a link that opens that screen |
 
 ## Links
 
