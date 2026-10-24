@@ -26,7 +26,7 @@ Every tool acts as the signed-in Liftory user. Decide whose data the request is 
 2. Collect what the menu needs and ask for what is missing, in one message: the daily targets (or that there are none), the number of meals and their times, the foods they want included or left out, and whether some days differ. Do not set calorie or macro targets yourself; use the ones the user gives.
 3. When the user wants their saved meals, call list_meals (with library or query when they name one) and use the meals they pick exactly as list_meals returns them, mealId included. Find every other food with search_food, in the user's language and with their language code as the locale. Use only foods it returns, with their foodId. When nothing suitable comes back, say so, and keep the line without a foodId only if the user agrees.
 4. Build the draft as [references/menu-model.md](references/menu-model.md) describes and call validate_nutrition_plan. Fix every unknown foodId and every problem it reports, and validate again until both are empty.
-5. Show the menu: each meal with its options and foods with amounts, the targets, the weekly limits and notes, and the warnings validation returned. Ask the user to approve it, and ask whether it should replace the menu being followed now (which archives the person's other menus) or be saved without activating it.
+5. Show the menu: each meal with its options and foods with amounts, the targets, the weekly limits and notes, the rationale (the goal as the user said it, and the reasoning behind the targets), and the warnings validation returned. Ask the user to approve it, and ask whether it should replace the menu being followed now (which archives the person's other menus) or be saved without activating it.
 6. After approval, call create_nutrition_plan with the same draft, clientId when it is for a client, and activate as the user chose.
 7. Confirm the menu name, whose account it is on, and whether it is active. To activate a menu saved earlier, call activate_nutrition_plan with its planId only after the user asks for it.
 
@@ -45,7 +45,7 @@ When the user asks to change a menu that already exists, change it in place rath
 Never invent facts:
 - Every id (clientId, planId, exerciseId, techniqueId, foodId, sessionId) comes from a tool result in this conversation, never from memory or a guess.
 - Clients, exercises, techniques, and foods are named only as a tool returned them or as the user wrote them.
-- Numbers (sets, reps, durations, rest, loads, amounts, calorie and macro targets) come from the user, from their document, or from a design you showed them and they approved. Never state a body weight, a training load, or a target the user did not give.
+- Numbers (sets, reps, durations, rest, loads, amounts, calorie and macro targets) come from the user, from their document, or from a design you showed them and they approved. Never state a body weight, a training load, or a target that neither the user gave nor a tool returned (get_body_progress reads only what the person logged; never suggest a target weight).
 - When a fact you need is missing, ask for it instead of assuming it.
 
 Writes change a real Liftory account that a coach or client relies on:

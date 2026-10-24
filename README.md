@@ -71,6 +71,8 @@ data is in the [privacy policy](https://liftory.ch/privacy).
 | `answer-training-questions` | Answers a fitness question from Liftory's knowledge base and exercise catalog |
 | `message-inbox` | Summarizes your conversations, drafts a reply, and sends it after you approve it |
 | `use-the-app` | Tells you where to find something in the Liftory app and how to use it, with a link that opens that screen |
+| `set-up-coaching` | Helps a coach set up their profile, services, bookable hours and Stripe card payments, step by step |
+| `check-progress` | Reads training, eating and logged body-check progress, yours or a client's, and suggests where to take the training and the menu |
 
 ## Links
 

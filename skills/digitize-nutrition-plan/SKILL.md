@@ -33,7 +33,7 @@ How a menu maps onto Liftory is in [references/transcription.md](references/tran
 1. Decide whose menu it is, as above.
 2. Transcribe the document as described above and in the references, and ask the open questions.
 3. Find every food with search_food, in the document's language with its language code as the locale, and take the foodId of the food the row names. When there are several plausible matches or none, ask; a row the catalog has no match for stays without a foodId and goes on the decisions list.
-4. Build the draft and call validate_nutrition_plan. Fix every unknown foodId and every problem, and validate again until both are empty.
+4. Build the draft, with a rationale whose source is digitize and whose notes say it was transcribed from the user's document (the goal only when the document states it), and call validate_nutrition_plan. Fix every unknown foodId and every problem, and validate again until both are empty.
 5. Show the transcription meal by meal, the decisions list, and the warnings. Ask the user to approve it, and ask whether it should replace the menu being followed now (which archives the person's other menus) or be saved without activating it.
 6. After approval, call create_nutrition_plan with the same draft, clientId when it is for a client, and activate as the user chose.
 7. Read the saved menu back with get_nutrition_plan and compare it with the document, meal by meal and line by line. Report every difference; never explain one away.
@@ -43,7 +43,7 @@ How a menu maps onto Liftory is in [references/transcription.md](references/tran
 Never invent facts:
 - Every id (clientId, planId, exerciseId, techniqueId, foodId, sessionId) comes from a tool result in this conversation, never from memory or a guess.
 - Clients, exercises, techniques, and foods are named only as a tool returned them or as the user wrote them.
-- Numbers (sets, reps, durations, rest, loads, amounts, calorie and macro targets) come from the user, from their document, or from a design you showed them and they approved. Never state a body weight, a training load, or a target the user did not give.
+- Numbers (sets, reps, durations, rest, loads, amounts, calorie and macro targets) come from the user, from their document, or from a design you showed them and they approved. Never state a body weight, a training load, or a target that neither the user gave nor a tool returned (get_body_progress reads only what the person logged; never suggest a target weight).
 - When a fact you need is missing, ask for it instead of assuming it.
 
 Writes change a real Liftory account that a coach or client relies on:
