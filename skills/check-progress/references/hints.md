@@ -1,6 +1,6 @@
 # Progress hints
 
-| Hint | What it means | search_knowledge query | Not to claim |
+| Hint | What it means | What to explain | Not to claim |
 |---|---|---|---|
 | ConsistencyFirst | Training was too irregular to read progress; the other training hints are held back | adherence consistency before progression | that the program is failing |
 | AddLoad | The top of the planned rep range was reached on every working set twice | double progression rep range increase load | a load number the report or the user did not give |

@@ -1,6 +1,6 @@
 ---
 name: check-progress
-description: Check how training, eating and logged body checks are progressing, for the signed-in user or a client they coach, and suggest which direction to take the training and the menu, grounded in Liftory's training and nutrition knowledge. Use when the user asks how they or a client are progressing, whether to add load, sets or reps, whether a deload is due, whether the diet is working, or what to change next.
+description: Check how training, eating and logged body checks are progressing, for the signed-in user or a client they coach, and suggest which direction to take the training and the menu, grounded in current training and nutrition evidence. Use when the user asks how they or a client are progressing, whether to add load, sets or reps, whether a deload is due, whether the diet is working, or what to change next.
 ---
 # Check progress
 
@@ -24,7 +24,7 @@ Every tool acts as the signed-in Liftory user. Decide whose data the request is 
 
 1. Call get_training_progress, get_nutrition_progress and get_body_progress for that person (whichever the question is about; all three for a general check-in). A body report a client has not shared answers with a refusal: say that their body checks are not shared with the coach, and go on without them.
 2. Show the facts first, shortly: the main lifts and their trend, the muscle groups outside the usual weekly sets, logging and intake against the menu, and the weigh-in trend when there is one.
-3. For each hint, call search_knowledge with the query its row in [references/hints.md](references/hints.md) gives, and explain the direction from the returned passages. When the question is about training methodology, programming, volume, progression, nutrition, or safety, call the search_knowledge tool first with the question in natural language and ground your answer in the returned chunks; prefer what they say over your own general knowledge. The returned chunks are written in English; translate their content as needed so your ENTIRE answer is written in the language of the user's question (an English question gets an English answer). When the passages do not cover it, say so rather than filling the gap.
+3. For each hint, explain the direction its row in [references/hints.md](references/hints.md) describes, from current, well-supported evidence, and keep to what its "Not to claim" column allows. Never present it as Liftory's advice.
 4. Judge the weight trend against the menu's goal from get_nutrition_progress (LoseFat, Hold or Build), or against the goal the user states when the menu has none (the NoGoal hint); ask for it when it matters and is unknown. Never ask for a weight or a measurement, and never suggest a target weight.
 5. Offer the next step and hand it over: a training change to the review-training-plan skill (an adapted plan, after approval), a menu change to the build-nutrition-plan skill. Nothing is changed in this skill.
 
@@ -42,4 +42,4 @@ When a tool fails or returns nothing:
 
 ## Output
 
-Facts, then two or three suggested directions, each with the passage it rests on named by its source and section. Loads, sets and calories only as the reports give them or as the user states them.
+Facts, then two or three suggested directions, each with the reason behind it in one sentence. Loads, sets and calories only as the reports give them or as the user states them.

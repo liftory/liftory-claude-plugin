@@ -68,7 +68,7 @@ data is in the [privacy policy](https://liftory.ch/privacy).
 | `digitize-training-plan` | Transcribes a coach's training plan from a document or picture |
 | `build-nutrition-plan` | Puts together a menu from your targets and preferences |
 | `digitize-nutrition-plan` | Transcribes a coach's menu from a document or picture |
-| `answer-training-questions` | Answers a fitness question from Liftory's knowledge base and exercise catalog |
+| `answer-training-questions` | Answers a fitness question, with the exercises from Liftory's catalog |
 | `message-inbox` | Summarizes your conversations, drafts a reply, and sends it after you approve it |
 | `use-the-app` | Tells you where to find something in the Liftory app and how to use it, with a link that opens that screen |
 | `set-up-coaching` | Helps a coach set up their profile, services, bookable hours and Stripe card payments, step by step |

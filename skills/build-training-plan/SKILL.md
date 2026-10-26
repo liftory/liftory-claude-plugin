@@ -28,7 +28,7 @@ Every tool acts as the signed-in Liftory user. Decide whose data the request is 
 
 1. Decide whose plan it is, as above.
 2. Ask only for what is missing and changes the design: at most three short questions, in one message. A stated level is enough; do not ask for test results or rep counts. Prefer a sensible default over another question, and say which defaults you used. Never ask again for something the user already answered.
-3. Call search_knowledge for the programming questions the plan raises (split, weekly volume, progression) and follow what it returns.
+3. Settle the programming questions the plan raises (split, weekly volume, progression) from current, well-supported evidence for the goal and the level.
 4. Show the outline first: the days, the muscle groups or focus of each day, and the number of weeks. Continue when the user agrees or asks for changes.
 5. Choose the exercises as described in [references/plan-design.md](references/plan-design.md), then call present_day for each day. Replace any exerciseId it reports as missing and check that day again.
 6. Show the whole plan: for each day, every exercise with its muscle group, sets, reps or duration, and rest. Ask the user to approve it, and ask whether it should become the plan being followed now or stay scheduled for later.

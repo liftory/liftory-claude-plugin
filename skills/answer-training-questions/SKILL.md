@@ -1,6 +1,6 @@
 ---
 name: answer-training-questions
-description: Answer a question about training, exercise technique, programming, volume, progression, recovery, or fitness related nutrition from Liftory's knowledge base and exercise catalog. Use when the user asks a fitness question without asking to create, change, or read a specific plan, menu, or account record.
+description: Answer a question about training, exercise technique, programming, volume, progression, recovery, or fitness related nutrition, with the exercises found in Liftory's catalog. Use when the user asks a fitness question without asking to create, change, or read a specific plan, menu, or account record.
 ---
 # Answer a training question
 
@@ -10,10 +10,9 @@ Answer only what the user asked, directly and concisely, in a few short sentence
 
 ## Steps
 
-1. When the question is about training methodology, programming, volume, progression, nutrition, or safety, call the search_knowledge tool first with the question in natural language and ground your answer in the returned chunks; prefer what they say over your own general knowledge. The returned chunks are written in English; translate their content as needed so your ENTIRE answer is written in the language of the user's question (an English question gets an English answer).
-2. Answer only from the returned passages and catalog results. When they do not cover the question, say that Liftory's knowledge base does not cover it, and do not fill the gap from your own knowledge unless the user asks for that; then label that part as not coming from Liftory and never attribute it to a source.
-3. When the answer names exercises, find them first with search_exercise, as described below.
-4. When the user then asks for a plan, a menu, or a change to their account, use the matching Liftory skill instead of answering here.
+1. Answer from current, well-supported evidence on training and nutrition. Where the evidence is mixed or thin, say so plainly rather than overstate it. Never present the answer as Liftory's advice or as coming from Liftory: Liftory supplies the exercise catalog and the user's own data.
+2. When the answer names exercises, find them first with search_exercise, as described below.
+3. When the user then asks for a plan, a menu, or a change to their account, use the matching Liftory skill instead of answering here.
 
 ## Exercises
 
